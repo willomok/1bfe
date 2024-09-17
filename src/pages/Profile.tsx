@@ -4,7 +4,7 @@ import { Bug } from '../models/Bug';
 import { updateUserProfile } from '../services/userService';
 import { createBug, getUserBugs, resolveBug } from '../services/bugService';
 import Login from '../components/Login';
-import '../styles/profile.css';
+import '../styles/Profile.css';
 
 const Profile = () => {
   const [user, setUser] = useState<User | null>(null);
