@@ -19,7 +19,7 @@ const HomePage = () => {
 
   const fetchBugs = async () => {
     try {
-      const response = await axios.get('http://onebugbe.eba-v3y4zm73.eu-west-1.elasticbeanstalk.com//api/bugs');
+      const response = await axios.get('https://bugbe.onrender.com/api/bugs');
       if (Array.isArray(response.data)) {
         setBugs(response.data);
       } else {
@@ -34,7 +34,7 @@ const HomePage = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://onebugbe.eba-v3y4zm73.eu-west-1.elasticbeanstalk.com//api/users');
+      const response = await axios.get('https://bugbe.onrender.com/api/users');
       setUsers(response.data); 
     } catch (error) {
       console.error('Error fetching users:', error);
