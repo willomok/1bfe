@@ -15,7 +15,7 @@ interface ApiResponse {
 
 export const getBugs = async (): Promise<Bug[]> => {
   try {
-    const response = await apiClient.get<ApiResponse>('/bugs');
+    const response = await apiClient.get<ApiResponse>('/api/bugs');
     
     // Ensure that $values is an array, else return an empty array
     return Array.isArray(response.data.$values) ? response.data.$values : [];
@@ -28,7 +28,7 @@ export const getBugs = async (): Promise<Bug[]> => {
 
 export const getUsers = async (): Promise<{ id: number; name: string }[]> => {
   try {
-    const response = await apiClient.get('/users');
+    const response = await apiClient.get('/api/users');
     return response.data;
   } catch (error) {
     console.error('Error fetching users:', error);
@@ -38,7 +38,7 @@ export const getUsers = async (): Promise<{ id: number; name: string }[]> => {
 
 export const getUserBugs = async (userId: number): Promise<Bug[]> => {
   try {
-    const response = await apiClient.get(`/bugs/user-bugs/${userId}`);
+    const response = await apiClient.get(`/api/bugs/user-bugs/${userId}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching user bugs:', error);
@@ -47,7 +47,7 @@ export const getUserBugs = async (userId: number): Promise<Bug[]> => {
 };
 
 export const resolveBug = async (id: number): Promise<void> => {
-  await apiClient.put(`/bugs/${id}/resolve`);
+  await apiClient.put(`/api/bugs/${id}/resolve`);
 };
 
 export const createBug = async (
@@ -65,7 +65,7 @@ export const createBug = async (
   };
 
   try {
-    const response = await apiClient.post<Bug>('/bugs', bugData);
+    const response = await apiClient.post<Bug>('/api/bugs', bugData);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {

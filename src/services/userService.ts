@@ -9,22 +9,22 @@ const apiClient = axios.create({
 });
 
 export const getUserProfile = async (id: number): Promise<User> => {
-  const response = await apiClient.get<User>(`/Users/${id}`);
+  const response = await apiClient.get<User>(`/api/Users/${id}`);
   return response.data;
 };
 
 export const updateUserProfile = async (id: number, user: Partial<User>): Promise<void> => {
-  await apiClient.put(`/Users/${id}`, user);
+  await apiClient.put(`/api/Users/${id}`, user);
 };
 
 export const getUsers = async (): Promise<User[]> => {
-  const response = await apiClient.get<User[]>('/Users');
+  const response = await apiClient.get<User[]>('/api/Users');
   return response.data;
 };
 
 export const createUser = async (user: Omit<User, 'id'>): Promise<User> => {
   try {
-    const response = await apiClient.post<User>('/Users', user);
+    const response = await apiClient.post<User>('/api/Users', user);
     return response.data;
   } catch (error) {
     console.error('Error creating user', error);
@@ -33,5 +33,5 @@ export const createUser = async (user: Omit<User, 'id'>): Promise<User> => {
 };
 
 export const deleteUser = async (id: number): Promise<void> => {
-  await apiClient.delete(`/Users/${id}`);
+  await apiClient.delete(`/api/Users/${id}`);
 };
