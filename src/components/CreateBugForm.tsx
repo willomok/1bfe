@@ -24,7 +24,7 @@ const CreateBugForm: React.FC<CreateBugFormProps> = ({ loggedInUserId }) => {
     if (!loggedInUserId) {
       const fetchUsers = async () => {
         try {
-          const response = await axios.get('https://localhost:7167/api/users');
+          const response = await axios.get('https://bugbe.onrender.com/api/users');
           setUsers(response.data);
         } catch (error) {
           console.error('Error fetching users:', error);
@@ -54,7 +54,7 @@ const CreateBugForm: React.FC<CreateBugFormProps> = ({ loggedInUserId }) => {
     };
 
     try {
-      const response = await axios.post('https://localhost:7167/api/bugs', newBug);
+      const response = await axios.post('https://bugbe.onrender.com/api/bugs', newBug);
       console.log('Bug created:', response.data);
 
       // Reset form after successful creation

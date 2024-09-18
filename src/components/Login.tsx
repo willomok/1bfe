@@ -15,7 +15,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const response = await axios.post('https://localhost:7167/api/auth/login', { email, password });
+      const response = await axios.post('https://bugbe.onrender.com/api/auth/login', { email, password });
       onLoginSuccess(response.data); // Pass the logged-in user to the parent component
     } catch (error) {
       setError('Invalid email or password.');
