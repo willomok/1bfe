@@ -1,87 +1,165 @@
 :root {
-    --background-color: #121212;
-    --text-color: #e0e0e0;
-    --secondary-text-color: #b3b3b3;
-    --card-background-color: #1e1e1e;
-    --border-color: #333;
-  }
-  
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --secondary-text-color: #b3b3b3;
+  --card-background-color: #1e1e1e;
+  --border-color: #333;
+  --accent-color: #007BFF; /* Define accent color for buttons and links */
+}
 
+/* Global styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Montserrat', monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+input, textarea, select, button {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%; /* Make form inputs take full width */
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--secondary-text-color);
+}
+
+/* Button styles */
+button {
+  background-color: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Hard-coded hover color for better control */
+}
+
+/* Bugs table */
+.bugs-table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.bugs-table th, .bugs-table td {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+}
+
+.bugs-table th {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.bugs-table tr:nth-child(even) {
+  background-color: #2b2b2b;
+}
+
+.bugs-table tr:hover {
+  background-color: #333;
+}
+
+/* Update profile form and create bug form */
+.update-profile-form, .profile-create-bug {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Montserrat', monospace;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-align: center;
+    text-align: left; /* Align text to left on mobile for better readability */
   }
-  
 
+  /* Form elements */
   input, textarea, select, button {
-    background-color: var(--card-background-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  input::placeholder, textarea::placeholder {
-    color: var(--secondary-text-color);
-  }
-  
-  /* Buttons */
-  button {
-    background-color: var(--accent-color);
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: darken(var(--accent-color), 10%);
-  }
- 
-  .bugs-table {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: collapse;
-
-  }
-  
-  .bugs-table th, .bugs-table td {
-    padding: 12px 15px;
-    border: 1px solid var(--border-color);
-  }
-  
-  .bugs-table th {
-    background-color: var(--accent-color);
-    color: white;
-  }
-  
-  .bugs-table tr:nth-child(even) {
-    background-color: #2b2b2b;
-  }
-  
-  .bugs-table tr:hover {
-    background-color: #333;
+    padding: 8px; /* Reduce padding on mobile */
+    font-size: 14px;
   }
 
   .update-profile-form, .profile-create-bug {
-    background-color: var(--card-background-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    padding: 15px;
+    max-width: 100%; /* Ensure full width on smaller screens */
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color);
+
+  /* Bugs table */
+  .bugs-table, .bugs-table thead, .bugs-table tbody, .bugs-table th, .bugs-table td, .bugs-table tr {
+    display: block;
+    width: 100%;
   }
-  
+
+  .bugs-table th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; /* Hide headers on mobile */
+  }
+
+  .bugs-table tr {
+    margin-bottom: 10px;
+  }
+
+  .bugs-table td {
+    padding-left: 50%;
+    position: relative;
+    text-align: left;
+  }
+
+  .bugs-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+    color: var(--secondary-text-color);
+  }
+}
+
+@media (max-width: 480px) {
+  .update-profile-form, .profile-create-bug {
+    padding: 10px;
+  }
+
+  .bugs-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
   a {
-    color: var(--accent-color);
+    font-size: 14px;
   }
-  
-  a:hover {
-    color: lighten(var(--accent-color), 10%);
-  }
-  
+}
