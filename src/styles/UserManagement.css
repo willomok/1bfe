@@ -8,26 +8,30 @@
     color: #333;
 }
 
+
 .add-user-form {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
 .form-group {
     margin-bottom: 15px;
 }
+
 
 .form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
+
 
 .submit-btn {
     background-color: #007BFF;
@@ -44,6 +48,7 @@
     background-color: #0056b3;
 }
 
+
 .users-table {
     width: 100%;
     margin-top: 20px;
@@ -52,13 +57,16 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
 .users-table table {
     width: 100%;
     border-collapse: collapse;
     color: white;
 }
 
-.users-table th, .users-table td {
+
+.users-table th, 
+.users-table td {
     padding: 12px 15px;
     text-align: left;
 }
@@ -74,6 +82,7 @@
     background-color: darkslategrey;
 }
 
+
 .delete-btn {
     background-color: #dc3545;
     color: white;
@@ -88,14 +97,26 @@
     background-color: #c82333;
 }
 
+
 .error-message {
     color: red;
     margin-bottom: 20px;
 }
 
+
 @media (max-width: 768px) {
-    .users-table, .users-table thead, .users-table tbody, .users-table th, .users-table td, .users-table tr {
+    .add-user-form {
+        padding: 15px;
+    }
+
+    .users-table, 
+    .users-table thead, 
+    .users-table tbody, 
+    .users-table th, 
+    .users-table td, 
+    .users-table tr {
         display: block;
+        width: 100%;
     }
 
     .users-table th {
@@ -111,10 +132,11 @@
     .users-table td {
         padding-left: 50%;
         position: relative;
-        text-align: right;
+        text-align: left;
     }
 
     .users-table td:before {
+        content: attr(data-label);
         position: absolute;
         left: 10px;
         width: 45%;
@@ -124,8 +146,29 @@
         font-weight: bold;
     }
 
+    
     .users-table td:nth-of-type(1):before { content: "Username"; }
     .users-table td:nth-of-type(2):before { content: "Name"; }
     .users-table td:nth-of-type(3):before { content: "Email"; }
     .users-table td:nth-of-type(4):before { content: "Actions"; }
+}
+
+
+@media (max-width: 480px) {
+    .user-container {
+        padding: 10px; 
+    }
+
+    .form-group input {
+        font-size: 14px; 
+    }
+
+    .submit-btn {
+        font-size: 14px; 
+    }
+
+    .delete-btn {
+        font-size: 14px; 
+        padding: 6px 10px; 
+    }
 }

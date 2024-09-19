@@ -1,4 +1,3 @@
-/* Profile container */
 .profile-container {
     width: 100%;
     max-width: 1200px;
@@ -9,7 +8,7 @@
     color: #333;
 }
 
-/* Profile form and bug form styling */
+
 .profile-container .update-profile-form, 
 .profile-container .profile-create-bug {
     width: 100%;
@@ -20,7 +19,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Input fields, text areas, and selects styling */
 .profile-container .update-profile-form input, 
 .profile-container .profile-create-bug input, 
 .profile-container .profile-create-bug select, 
@@ -32,7 +30,7 @@
     box-sizing: border-box;
 }
 
-/* Label styling */
+
 .profile-container .update-profile-form label, 
 .profile-container .profile-create-bug label {
     display: block;
@@ -40,7 +38,7 @@
     margin-bottom: 5px;
 }
 
-/* Buttons styling */
+
 .profile-container .update-profile-form button, 
 .profile-container .profile-create-bug button {
     background-color: #007BFF;
@@ -51,16 +49,16 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
-    margin-bottom: 15px; /* Adds spacing below each button */
+    margin-bottom: 15px;
 }
 
-/* Button hover effect */
+
 .profile-container .update-profile-form button:hover, 
 .profile-container .profile-create-bug button:hover {
     background-color: darkslategray;
 }
 
-/* Adding spacing between buttons */
+
 .profile-container .button-group {
     display: flex;
     justify-content: space-between;
@@ -68,11 +66,11 @@
 }
 
 .profile-container .button-group button {
-    width: 48%; /* Ensure buttons are equally sized and leave space between them */
-    margin-bottom: 0; /* Remove extra margin in the button group */
+    width: 48%; 
+    margin-bottom: 0; 
 }
 
-/* Bugs table styling */
+
 .profile-container .bugs-table {
     width: 100%;
     margin: 20px auto;
@@ -96,7 +94,7 @@
     background-color: darkslategray;
 }
 
-/* Button styles inside the bugs table */
+
 .profile-container .bugs-table button {
     background-color: #28a745;
     color: white;
@@ -111,15 +109,15 @@
     background-color: #218838;
 }
 
-/* Responsive design for small screens */
+
 @media (max-width: 768px) {
     .profile-container {
-        padding: 10px; /* Reduce padding for small screens */
+        padding: 10px; 
     }
 
     .profile-container .update-profile-form, 
     .profile-container .profile-create-bug {
-        max-width: 100%; /* Make forms full-width on small screens */
+        max-width: 100%; 
         padding: 15px;
     }
 
@@ -128,8 +126,8 @@
     }
 
     .profile-container .button-group button {
-        width: 100%; /* Make buttons stack vertically on small screens */
-        margin-bottom: 10px; /* Add margin between stacked buttons */
+        width: 100%; 
+        margin-bottom: 10px; 
     }
 
     .profile-container .bugs-table, 
@@ -139,18 +137,18 @@
     .profile-container .bugs-table td, 
     .profile-container .bugs-table tr {
         display: block;
-        width: 100%; /* Ensure table stretches across screen */
+        width: 100%;
     }
 
     .profile-container .bugs-table th {
         position: absolute;
         top: -9999px;
-        left: -9999px; /* Hide table headers */
+        left: -9999px; 
     }
 
     .profile-container .bugs-table tr {
         margin-bottom: 10px;
-        display: block; /* Display rows as blocks */
+        display: block;
     }
 
     .profile-container .bugs-table td {
@@ -160,7 +158,7 @@
     }
 
     .profile-container .bugs-table td:before {
-        content: attr(data-label); /* Use data-label attribute for cell labels */
+        content: attr(data-label); 
         position: absolute;
         left: 10px;
         width: 45%;
@@ -171,18 +169,18 @@
     }
 }
 
-/* Further tweaks for very small screens */
+
 @media (max-width: 480px) {
     .profile-container .update-profile-form, 
     .profile-container .profile-create-bug {
-        padding: 10px; /* Reduce form padding further */
+        padding: 10px; 
     }
 
     .profile-container .bugs-table td {
-        font-size: 14px; /* Adjust font size for table cells */
+        font-size: 14px; 
     }
 
     .profile-container .bugs-table button {
-        padding: 6px 10px; /* Reduce padding for table buttons */
+        padding: 6px 10px;
     }
 }
