@@ -6,34 +6,35 @@
   background-color: #1e1e1e;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  color: #e0e0e0; 
+  color: #e0e0e0;
 }
 
 h1 {
   text-align: left;
+  margin-bottom: 20px;
 }
 
 section h3 {
   margin-top: 20px;
+  margin-bottom: 10px;
   color: #e0e0e0;
 }
 
 section label {
   font-weight: bold;
   margin-right: 10px;
-  color: #e0e0e0; 
+  color: #e0e0e0;
 }
 
 section select {
   margin: 10px 20px 20px 0;
   padding: 8px;
-  border: 1px solid #444; 
-  background-color: #2b2b2b; 
-  color: #e0e0e0; 
+  border: 1px solid #444;
+  background-color: #2b2b2b;
+  color: #e0e0e0;
   border-radius: 5px;
 }
 
-/* Bugs table styling */
 .bugs-table {
   width: 100%;
   border-collapse: collapse;
@@ -41,12 +42,12 @@ section select {
   background-color: #333;
 }
 
-.bugs-table th, 
+.bugs-table th,
 .bugs-table td {
-  border: 1px solid #444; 
+  border: 1px solid #444;
   padding: 12px 15px;
   text-align: left;
-  color: #e0e0e0; 
+  color: #e0e0e0;
 }
 
 .bugs-table th {
@@ -56,16 +57,15 @@ section select {
 }
 
 .bugs-table tr:nth-child(even) {
-  background-color: #2b2b2b; 
+  background-color: #2b2b2b;
 }
 
 .bugs-table tr:hover {
-  background-color: #333; 
+  background-color: #333;
 }
 
-
 .bugs-table td button {
-  background-color: #28a745; 
+  background-color: #28a745;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -75,53 +75,53 @@ section select {
 }
 
 .bugs-table td button:hover {
-  background-color: #218838; 
+  background-color: #218838;
 }
-
 
 @media (max-width: 768px) {
   .home-container {
-      padding: 15px; 
+    padding: 15px;
   }
 
-  .bugs-table, 
-  .bugs-table thead, 
-  .bugs-table tbody, 
-  .bugs-table th, 
-  .bugs-table td, 
+  .bugs-table,
+  .bugs-table thead,
+  .bugs-table tbody,
+  .bugs-table th,
+  .bugs-table td,
   .bugs-table tr {
-      display: block;
-      width: 100%;
+    display: block;
+    width: 100%;
   }
 
   .bugs-table th {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
 
   .bugs-table tr {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .bugs-table td {
-      padding-left: 50%;
-      position: relative;
-      text-align: left;
+    padding-left: 50%;
+    position: relative;
+    text-align: left;
+    margin-bottom: 10px;
+    word-wrap: break-word;
   }
 
   .bugs-table td:before {
-      content: attr(data-label); 
-      position: absolute;
-      left: 10px;
-      width: 45%;
-      padding-right: 10px;
-      white-space: nowrap;
-      text-align: left;
-      font-weight: bold;
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
   }
 
-  
   .bugs-table td:nth-of-type(1):before { content: "ID"; }
   .bugs-table td:nth-of-type(2):before { content: "Title"; }
   .bugs-table td:nth-of-type(3):before { content: "Description"; }
@@ -133,21 +133,24 @@ section select {
   .bugs-table td:nth-of-type(9):before { content: "Actions"; }
 }
 
-
 @media (max-width: 480px) {
   .home-container {
-      padding: 10px; 
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
   }
 
   .bugs-table td {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .bugs-table td button {
-      padding: 6px 10px; 
+    padding: 6px 10px;
   }
 }
-
 
 .status-open {
   color: green !important;
