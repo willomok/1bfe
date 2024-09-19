@@ -4,10 +4,9 @@
   --secondary-text-color: #b3b3b3;
   --card-background-color: #1e1e1e;
   --border-color: #333;
-  --accent-color: #007BFF; /* Define accent color for buttons and links */
+  --accent-color: #007BFF;
 }
 
-/* Global styles */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -24,14 +23,13 @@ input, textarea, select, button {
   border: 1px solid var(--border-color);
   padding: 10px;
   border-radius: 5px;
-  width: 100%; /* Make form inputs take full width */
+  width: 100%; 
 }
 
 input::placeholder, textarea::placeholder {
   color: var(--secondary-text-color);
 }
 
-/* Button styles */
 button {
   background-color: var(--accent-color);
   color: white;
@@ -40,10 +38,9 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3; /* Hard-coded hover color for better control */
+  background-color: #0056b3;
 }
 
-/* Bugs table */
 .bugs-table {
   width: 100%;
   margin: 20px auto;
@@ -68,7 +65,6 @@ button:hover {
   background-color: #333;
 }
 
-/* Update profile form and create bug form */
 .update-profile-form, .profile-create-bug {
   background-color: var(--card-background-color);
   color: var(--text-color);
@@ -79,12 +75,10 @@ button:hover {
   margin: 20px auto;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
 }
 
-/* Links */
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -94,24 +88,21 @@ a:hover {
   color: #0056b3;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   body {
-    text-align: left; /* Align text to left on mobile for better readability */
+    text-align: left;
   }
 
-  /* Form elements */
   input, textarea, select, button {
-    padding: 8px; /* Reduce padding on mobile */
+    padding: 8px;
     font-size: 14px;
   }
 
   .update-profile-form, .profile-create-bug {
     padding: 15px;
-    max-width: 100%; /* Ensure full width on smaller screens */
+    max-width: 100%;
   }
 
-  /* Bugs table */
   .bugs-table, .bugs-table thead, .bugs-table tbody, .bugs-table th, .bugs-table td, .bugs-table tr {
     display: block;
     width: 100%;
@@ -120,7 +111,7 @@ a:hover {
   .bugs-table th {
     position: absolute;
     top: -9999px;
-    left: -9999px; /* Hide headers on mobile */
+    left: -9999px;
   }
 
   .bugs-table tr {
@@ -131,6 +122,9 @@ a:hover {
     padding-left: 50%;
     position: relative;
     text-align: left;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 8px 10px;
   }
 
   .bugs-table td:before {
@@ -141,6 +135,12 @@ a:hover {
     white-space: nowrap;
     font-weight: bold;
     color: var(--secondary-text-color);
+  }
+
+  .bugs-table td button {
+    width: auto;
+    padding: 6px 8px;
+    font-size: 14px;
   }
 }
 
