@@ -113,6 +113,25 @@
 
 /* Responsive design for small screens */
 @media (max-width: 768px) {
+    .profile-container {
+        padding: 10px; /* Reduce padding for small screens */
+    }
+
+    .profile-container .update-profile-form, 
+    .profile-container .profile-create-bug {
+        max-width: 100%; /* Make forms full-width on small screens */
+        padding: 15px;
+    }
+
+    .profile-container .button-group {
+        flex-direction: column;
+    }
+
+    .profile-container .button-group button {
+        width: 100%; /* Make buttons stack vertically on small screens */
+        margin-bottom: 10px; /* Add margin between stacked buttons */
+    }
+
     .profile-container .bugs-table, 
     .profile-container .bugs-table thead, 
     .profile-container .bugs-table tbody, 
@@ -120,25 +139,28 @@
     .profile-container .bugs-table td, 
     .profile-container .bugs-table tr {
         display: block;
+        width: 100%; /* Ensure table stretches across screen */
     }
 
     .profile-container .bugs-table th {
         position: absolute;
         top: -9999px;
-        left: -9999px;
+        left: -9999px; /* Hide table headers */
     }
 
     .profile-container .bugs-table tr {
         margin-bottom: 10px;
+        display: block; /* Display rows as blocks */
     }
 
     .profile-container .bugs-table td {
         padding-left: 50%;
         position: relative;
-        text-align: right;
+        text-align: left;
     }
 
     .profile-container .bugs-table td:before {
+        content: attr(data-label); /* Use data-label attribute for cell labels */
         position: absolute;
         left: 10px;
         width: 45%;
@@ -146,5 +168,21 @@
         white-space: nowrap;
         text-align: left;
         font-weight: bold;
+    }
+}
+
+/* Further tweaks for very small screens */
+@media (max-width: 480px) {
+    .profile-container .update-profile-form, 
+    .profile-container .profile-create-bug {
+        padding: 10px; /* Reduce form padding further */
+    }
+
+    .profile-container .bugs-table td {
+        font-size: 14px; /* Adjust font size for table cells */
+    }
+
+    .profile-container .bugs-table button {
+        padding: 6px 10px; /* Reduce padding for table buttons */
     }
 }
