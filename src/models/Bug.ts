@@ -10,5 +10,5 @@ export interface Bug {
     resolvedDate?: string;
     closedDate?: string;
     assignedUserId: number;
-    assignedUser?: User;  // Reference to the User type
+    assignedUser?: User; 
 }
